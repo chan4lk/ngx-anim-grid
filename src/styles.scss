@@ -3,6 +3,11 @@
 .flip-list-move {
   transition: transform 1s;
 }
+.btn {
+  background-color: #19704c;
+  text-align: center;
+  font-size: 2rem;
+}
 .container {
   display: flex;
   flex-direction: column;

@@ -75,16 +75,28 @@ export class CardService {
       },
       {
         heading: 'Notification 1',
-        type: 'notificaiton',
+        type: 'notification',
         wId: 'w1 card-h3',
       },
       {
         heading: 'Notification 2',
-        type: 'notificaiton',
+        type: 'notification',
         wId: 'w1 card-h3',
       },
     ];
 
     return cards;
+  }
+
+  sort(cards: Card[]) {
+    const order = {
+      bill: 4,
+      order: 3,
+      fault: 2,
+      notification: 1,
+    };
+    return cards.sort((a, b) => {
+      return order[b.type] - order[a.type];
+    });
   }
 }

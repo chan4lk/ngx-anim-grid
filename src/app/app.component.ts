@@ -25,18 +25,22 @@ export class AppComponent implements OnInit {
     this.hId = this.service.getHId(this.items);
   }
   shuffle() {
-    this.items = shuffle(this.items);
+    const cards = shuffle(this.items);
+    const ordered = this.service.sort(cards);
+    this.items = ordered;
   }
 
   remove() {
     const items = [...this.items];
     items.splice(5, 1);
-    this.items = items;
+    const ordered = this.service.sort(items);
+    this.items = ordered;
   }
 
   clicked(card: Card) {
     const cards = this.items.filter((i) => i !== card);
-    this.items = cards;
+    const ordered = this.service.sort(cards);
+    this.items = ordered;
   }
 
   reset() {

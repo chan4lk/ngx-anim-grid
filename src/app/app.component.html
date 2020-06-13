@@ -1,7 +1,7 @@
 <h2>Items reorder/shuffle animations with Angular2 ngFor</h2>
-<button (click)="shuffle()">Configure</button>
-<button (click)="remove()">Remove</button>
-<button (click)="reset()">Reset</button>
+<button class="btn" (click)="shuffle()">Configure</button>
+<button class="btn" (click)="remove()">Remove</button>
+<button class="btn" (click)="reset()">Reset</button>
 <app-card-container
   (clicked)="clicked($event)"
   [hId]="hId"
