@@ -2,10 +2,4 @@
 <button (click)="shuffle()">Configure</button>
 <button (click)="remove()">Remove</button>
 <button (click)="reset()">Reset</button>
-<div>
-  <div class="container" [transition-group]="state">
-    <app-card [data]="item" *ngFor="let item of items" transition-group-item>
-      
-    </app-card>
-  </div>
-</div>
+<app-card-container [hId]="hId" [cards]="items"></app-card-container>

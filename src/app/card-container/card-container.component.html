@@ -1,0 +1,4 @@
+<div class="container" [ngClass]="hId" [transition-group]="'flip-list'">
+  <app-card [data]="card" *ngFor="let card of cards" transition-group-item>
+  </app-card>
+</div>

@@ -1,17 +1,26 @@
 //our root app component
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 
 import { shuffle } from 'lodash';
+import { CardService } from './card-service.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
-export class AppComponent {
-  items = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+export class AppComponent implements OnInit {
+  items = null;
   state = 'flip-list';
   init = true;
+  hId = '';
+
+  constructor(private service: CardService) {}
+  ngOnInit(): void {
+    this.items = this.service.getCards();
+    this.hId = this.service.getHId(this.items);
+  }
   shuffle() {
     this.items = shuffle(this.items);
   }
@@ -23,6 +32,6 @@ export class AppComponent {
   }
 
   reset() {
-    this.items.push(10);
+    this.items = this.service.getCards();
   }
 }

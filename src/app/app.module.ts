@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
 import { TransitionGroupComponent } from './transtition-group/transtition-group.component';
 import { TransitionGroupItemDirective } from './transtion-group.directive';
+import { CardContainerComponent } from './card-container/card-container.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
     TransitionGroupComponent,
-    TransitionGroupItemDirective
+    TransitionGroupItemDirective,
+    CardContainerComponent
   ],
   imports: [
     BrowserModule
