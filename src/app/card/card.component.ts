@@ -4,6 +4,8 @@ import {
   Input,
   ViewEncapsulation,
   ChangeDetectionStrategy,
+  Output,
+  EventEmitter,
 } from '@angular/core';
 import { Card } from '../card';
 
@@ -16,6 +18,7 @@ import { Card } from '../card';
 })
 export class CardComponent implements OnInit {
   @Input() data: Card | null = null;
+  @Output() clicked = new EventEmitter<Card>();
   constructor() {}
 
   ngOnInit(): void {}

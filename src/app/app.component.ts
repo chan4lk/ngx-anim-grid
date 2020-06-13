@@ -3,6 +3,7 @@ import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 
 import { shuffle } from 'lodash';
 import { CardService } from './card-service.service';
+import { Card } from './card';
 
 @Component({
   selector: 'app-root',
@@ -29,6 +30,11 @@ export class AppComponent implements OnInit {
     const items = [...this.items];
     items.splice(5, 1);
     this.items = items;
+  }
+
+  clicked(card: Card) {
+    const cards = this.items.filter((i) => i !== card);
+    this.items = cards;
   }
 
   reset() {

@@ -1,8 +1,8 @@
-import { TranstionGroupDirectiveDirective } from './transtion-group.directive';
+import { TransitionGroupItemDirective } from './transtion-group.directive';
 
 describe('TranstionGroupDirectiveDirective', () => {
   it('should create an instance', () => {
-    const directive = new TranstionGroupDirectiveDirective();
+    const directive = new TransitionGroupItemDirective(null);
     expect(directive).toBeTruthy();
   });
 });

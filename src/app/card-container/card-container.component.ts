@@ -3,6 +3,8 @@ import {
   OnInit,
   Input,
   ChangeDetectionStrategy,
+  Output,
+  EventEmitter,
 } from '@angular/core';
 import { Card } from '../card';
 
@@ -15,7 +17,7 @@ import { Card } from '../card';
 export class CardContainerComponent implements OnInit {
   @Input() cards: Card[] = [];
   @Input() hId = '';
-
+  @Output() clicked = new EventEmitter<Card>();
   constructor() {}
 
   ngOnInit(): void {}
