@@ -1,9 +1,10 @@
 //our root app component
-import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
 
 import { shuffle } from 'lodash';
 import { CardService } from './card-service.service';
 import { Card } from './card';
+import { CardContainerComponent } from './card-container/card-container.component';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ export class AppComponent implements OnInit {
   state = 'flip-list';
   init = true;
   hId = '';
+  @ViewChild(CardContainerComponent) container: CardContainerComponent;
 
   constructor(private service: CardService) {}
   ngOnInit(): void {
@@ -39,5 +41,6 @@ export class AppComponent implements OnInit {
 
   reset() {
     this.items = this.service.getCards();
+    this.container.reset();
   }
 }
